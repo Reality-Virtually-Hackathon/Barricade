@@ -60,4 +60,14 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
         Debug.Log("Number of locations stored is : " + spatialLocationList.Count);
         yield return null;
     }
+
+    //returns a ranom ship spawn location
+    public Vector3 GetRandomShipSpawnLocation()
+    {
+        Vector3 rndLocation = Vector3.zero;
+
+        // search spatial location list 
+
+        return rndLocation;
+    }
 }
