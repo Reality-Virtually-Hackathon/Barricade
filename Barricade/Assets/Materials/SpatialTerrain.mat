@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!21 &2100000
+Material:
+  serializedVersion: 6
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_Name: SpatialTerrain
+  m_Shader: {fileID: 4800000, guid: 5f6c54bf4bac06a4281be0caf4bf4770, type: 3}
+  m_ShaderKeywords: _USEWIREFRAME_ON
+  m_LightmapFlags: 5
+  m_EnableInstancingVariants: 0
+  m_DoubleSidedGI: 0
+  m_CustomRenderQueue: -1
+  stringTagMap: {}
+  disabledShaderPasses: []
+  m_SavedProperties:
+    serializedVersion: 3
+    m_TexEnvs:
+    - _GrassTex:
+        m_Texture: {fileID: 2800000, guid: 3736cf85cf10f674988c001d04991dbc, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _MainTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _VolTex:
+        m_Texture: {fileID: 0}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WallTex:
+        m_Texture: {fileID: 2800000, guid: 37af8089209fb45408cc6eebf4f6b5b9, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - _WaterTex:
+        m_Texture: {fileID: 2800000, guid: fb9e18d00d0466d41a08bfc9bc802605, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    m_Floats:
+    - _Falloff_Dst: 3
+    - _Falloff_Dst_Max: 8
+    - _Falloff_Dst_Min: 2
+    - _Falloff_Scale: 0.4
+    - _LineScale: 0.1
+    - _LinesPerMeter: 4
+    - _PulseWidth: 1
+    - _Radius: 1
+    - _UseWireframe: 1
+    - _WireThickness: 150
+    - _WireframeFill: 0.1
+    m_Colors:
+    - _BaseColor: {r: 0.012867644, g: 0.102941155, b: 0.050421562, a: 0}
+    - _Center: {r: 0, g: 0, b: 0, a: -1}
+    - _Color: {r: 1, g: 1, b: 1, a: 1}
+    - _PulseColor: {r: 0.145, g: 0.447, b: 0.922, a: 1}
+    - _WireColor: {r: 0.071366794, g: 0.6810046, b: 0.88235295, a: 1}
+    - _WireframeColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}

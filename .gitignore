@@ -19,6 +19,7 @@
 x64/
 x86/
 build/
+App/
 bld/
 [Bb]in/
 [Oo]bj/
