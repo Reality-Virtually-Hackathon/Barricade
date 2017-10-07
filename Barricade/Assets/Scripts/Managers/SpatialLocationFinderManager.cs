@@ -16,48 +16,78 @@ using HoloToolkit.Sharing;
 
 public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManager>
 {
-    const int QueryResultMaxCount = 512;
-    private SpatialUnderstandingDllTopology.TopologyResult[] resultsTopology = new SpatialUnderstandingDllTopology.TopologyResult[QueryResultMaxCount];
+
+    private SpatialUnderstandingDllTopology.TopologyResult[] resultsTopology = new SpatialUnderstandingDllTopology.TopologyResult[512];
 
     public List<SpatialLocation> spatialLocationList;
 
     public void ProcessScanToLocations()
     {
         spatialLocationList = new List<SpatialLocation>();
-        StartCoroutine(GetSpawnLocations());
+        StartCoroutine (GetSpawnLocations());
     }
 
 
     //Examples of ways to et locations and store them in location list. 
-    IEnumerator GetSpawnLocations()
+    private IEnumerator GetSpawnLocations()
     {
-        //Example Floor 1
-        float minHeight = 0;
-        float maxHeight = 0.125f;
+
+        yield return new WaitForSeconds(3);
+
+        //IntPtr resultsTopologyPtr = SpatialUnderstanding.Instance.UnderstandingDLL.PinObject(resultsTopology);
+        //int locationCount = SpatialUnderstandingDllTopology.QueryTopology_FindLargestPositionsOnFloor(
+        //    resultsTopology.Length, resultsTopologyPtr);
+
+        //Debug.Log(locationCount);
+        //Debug.Log(resultsTopology[0].position);
+        //END OF TEST EXAMPLES.. FINDING LOCATIONS FOR THE FLOOR NOW. 
         SpatialUnderstandingDllObjectPlacement.Solver_RemoveAllObjects();
+        SpaceVisualizer.Instance.ClearGeometry();
+
         IntPtr resultsTopologyPtr = SpatialUnderstanding.Instance.UnderstandingDLL.PinObject(resultsTopology);
         int locationCount = SpatialUnderstandingDllTopology.QueryTopology_FindPositionsOnFloor(
-            minHeight, maxHeight,
+            GameManager.Instance.shipManager.shipMaxHeight, GameManager.Instance.shipManager.shipMinHeight,
             resultsTopology.Length, resultsTopologyPtr);
 
-        SpatialLocation floor1 = new SpatialLocation();
-        floor1.position = resultsTopology[0].position;
-        floor1.normal = resultsTopology[0].normal;
-        floor1.name = "floor1"; // this sould be a descriptive name of what positin is. 
-        spatialLocationList.Add(floor1);
+        Debug.Log(locationCount);
+        Debug.Log("First test position" + resultsTopology[0].position);
 
 
-        //Example Wall Location
-        resultsTopologyPtr = SpatialUnderstanding.Instance.UnderstandingDLL.PinObject(resultsTopology);
-        locationCount = SpatialUnderstandingDllTopology.QueryTopology_FindLargestWall(resultsTopologyPtr);
 
-        SpatialLocation wall1 = new SpatialLocation();
-        wall1.position = resultsTopology[0].position;
-        wall1.normal = resultsTopology[0].normal;
-        wall1.name = "wall1"; // this sould be a descriptive name of what positin is. 
-        spatialLocationList.Add(wall1);
+        foreach (SpatialUnderstandingDllTopology.TopologyResult potentialShipFloor in resultsTopology)
+        {
+            SpatialLocation shipFloor = new SpatialLocation();
+            shipFloor.position = potentialShipFloor.position;
+            shipFloor.normal = potentialShipFloor.normal;
+            shipFloor.name = "shipFloor"; // this sould be a descriptive name of what positin is. 
+            spatialLocationList.Add(shipFloor);
+            Debug.Log(shipFloor.position);
+        }
+        Debug.Log(spatialLocationList.Count);
 
-        Debug.Log("Number of locations stored is : " + spatialLocationList.Count);
         yield return null;
+
+    }
+    private List<SpatialLocation> shipFloorLocationList;
+    //returns a ranom ship spawn location
+    public Vector3 GetRandomShipSpawnLocation()
+    {
+        shipFloorLocationList = new List<SpatialLocation>();
+
+        foreach (SpatialLocation curLocation in spatialLocationList)
+        {
+            if (curLocation.name == "shipFloor")
+            {
+                shipFloorLocationList.Add(curLocation);
+            }
+        }
+
+        //Getting a random Location
+        System.Random r = new System.Random();
+        SpatialLocation rndLocation = shipFloorLocationList[r.Next(shipFloorLocationList.Count)];
+
+        Vector3 rndPositon = rndLocation.position;
+
+        return rndPositon;
     }
 }

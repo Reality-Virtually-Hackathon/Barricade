@@ -91,7 +91,7 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
             {
                 SpatialUnderstandingDllObjectPlacement.Solver_RemoveAllObjects();
             }
-            AppState.Instance.ObjectPlacementDescription = "";
+            //AppState.Instance.ObjectPlacementDescription = "";
 
             if (clearAll && (SpaceVisualizer.Instance != null))
             {

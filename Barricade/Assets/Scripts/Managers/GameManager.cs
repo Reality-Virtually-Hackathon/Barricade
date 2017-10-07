@@ -15,6 +15,7 @@ using HoloToolkit.Sharing;
 public class GameManager : Singleton<GameManager>
 {
     public BuildingBlocksManager buildingBlockManager;
+    public ShipManager shipManager;
     public GameObject gameStage; // this will be the sharing stage that has world anchor on it. 
     int numOfPlayers;
     public List<Player> currentPlayers;
@@ -43,8 +44,10 @@ public class GameManager : Singleton<GameManager>
             }
         }
 
+        
         GlobalPlayerController.Instance.Activate();
-
+        //Start spawning ships
+        shipManager.StartSpawningShips();
     }
 
     //Wipes all game info and returns to menu. 
