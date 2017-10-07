@@ -8,6 +8,9 @@ public class ShipManager: MonoBehaviour {
 
     public GameObject shipPrefab;
 
+    public float shipMinHeight=0; // Dimension of a ship. used when finding spawnable locations. 
+    public float shipMaxHeight=0.125f;
+
     private List<GameObject> listOfSpawnedShips;
 
     private void Start()

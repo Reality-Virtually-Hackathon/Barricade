@@ -34,7 +34,7 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
         public void ClearGeometry(bool clearAll = true)
         {
             lineBoxList = new List<AnimatedBox>();
-            AppState.Instance.SpaceQueryDescription = "";
+           // AppState.Instance.SpaceQueryDescription = "";
 
             if (clearAll && (LevelSolver.Instance != null))
             {
@@ -279,11 +279,11 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
             // Vis description
             if (locationCount == boxesDisplayed)
             {
-                AppState.Instance.SpaceQueryDescription = string.Format("{0} ({1})", visDesc, locationCount);
+                //AppState.Instance.SpaceQueryDescription = string.Format("{0} ({1})", visDesc, locationCount);
             }
             else
             {
-                AppState.Instance.SpaceQueryDescription = string.Format("{0} (found={1}, displayed={2})", visDesc, locationCount, boxesDisplayed);
+                //AppState.Instance.SpaceQueryDescription = string.Format("{0} (found={1}, displayed={2})", visDesc, locationCount, boxesDisplayed);
             }
         }
 
