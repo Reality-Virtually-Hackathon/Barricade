@@ -620,7 +620,7 @@ Prefab:
     - target: {fileID: 114000012667812730, guid: 8aaf37823b26ee449bb3b3d7775965c3,
         type: 2}
       propertyPath: ServerAddress
-      value: 192.168.1.72
+      value: 10.189.11.17
       objectReference: {fileID: 0}
     - target: {fileID: 114000012667812730, guid: 8aaf37823b26ee449bb3b3d7775965c3,
         type: 2}
@@ -644,20 +644,6 @@ Transform:
 GameObject:
   m_PrefabParentObject: {fileID: 163528, guid: 8aaf37823b26ee449bb3b3d7775965c3, type: 2}
   m_PrefabInternal: {fileID: 452822690}
---- !u!114 &452822693
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 452822692}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 50ea9b56756ce4549ac9331b03af784f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  spawnablePrefabs:
-  - DataModelClassName: SyncShip
-    Prefab: {fileID: 1987155239536614, guid: a9e339548b1b75248af231eb885ffca3, type: 2}
 --- !u!114 &452822694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1798,6 +1784,7 @@ GameObject:
   - component: {fileID: 933881156}
   - component: {fileID: 933881155}
   - component: {fileID: 933881154}
+  - component: {fileID: 933881158}
   m_Layer: 0
   m_Name: GameStage
   m_TagString: Untagged
@@ -1829,7 +1816,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2922f398f96d5a841bf093ce0e760227, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnManager: {fileID: 452822693}
+  spawnManager: {fileID: 933881158}
   spawnParentTransform: {fileID: 933881152}
 --- !u!114 &933881154
 MonoBehaviour:
@@ -1878,6 +1865,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Timeout: 1
+--- !u!114 &933881158
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 933881151}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50ea9b56756ce4549ac9331b03af784f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawnablePrefabs:
+  - DataModelClassName: SyncShip
+    Prefab: {fileID: 1987155239536614, guid: a9e339548b1b75248af231eb885ffca3, type: 2}
 --- !u!114 &953755927 stripped
 MonoBehaviour:
   m_PrefabParentObject: {fileID: 114000012698980792, guid: 2ed75ffdf9031c94e8bce4b3d17b9928,
@@ -2221,6 +2222,10 @@ MonoBehaviour:
     KeyCode: 116
   - Keyword: place grid
     KeyCode: 112
+  - Keyword: place citadel
+    KeyCode: 99
+  - Keyword: place ship
+    KeyCode: 111
   recognitionConfidenceLevel: 1
 --- !u!114 &1638363837
 MonoBehaviour:
@@ -2720,9 +2725,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToSpeechManager: {fileID: 1709664545}
-  spawnManager: {fileID: 452822693}
+  spawnManager: {fileID: 933881158}
   cursor: {fileID: 64007644}
   tiles: {fileID: 1137772677}
+  ship: {fileID: 1987155239536614, guid: a9e339548b1b75248af231eb885ffca3, type: 2}
+  citadel: {fileID: 1362971551941746, guid: 612dc5f76b6ce5145b2bcb68ae2cc2e2, type: 2}
 --- !u!1 &1990612329
 GameObject:
   m_ObjectHideFlags: 0

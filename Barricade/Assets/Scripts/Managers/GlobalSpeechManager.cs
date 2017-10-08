@@ -27,6 +27,12 @@ namespace HoloToolkit.Unity.InputModule.Tests
                 case "place grid":
                     AppStateManager.Instance.PlaceGrid();
                     break;
+                case "place citadel":
+                    AppStateManager.Instance.PlaceGrid();
+                    break;
+                case "place ship":
+                    AppStateManager.Instance.PlaceGrid();
+                    break;
             }
         }
 

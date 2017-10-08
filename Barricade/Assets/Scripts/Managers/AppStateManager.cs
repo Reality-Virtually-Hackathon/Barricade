@@ -24,6 +24,8 @@ public class AppStateManager : Singleton<AppStateManager>
     public PrefabSpawnManager spawnManager;
     public GameObject cursor;
     public GameObject tiles;
+    public GameObject ship;
+    public GameObject citadel;
 
     private void Start()
     {
@@ -83,6 +85,16 @@ public class AppStateManager : Singleton<AppStateManager>
     public void PlaceGrid()
     {
         tiles.transform.position = cursor.transform.position;
+    }
+
+    public void PlaceCitadel()
+    {
+        Instantiate(ship, cursor.transform.position, Quaternion.identity);
+    }
+
+    public void PlaceShip()
+    {
+        Instantiate(citadel, cursor.transform.position, Quaternion.identity);
     }
 
     /// <summary>
