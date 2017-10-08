@@ -9,9 +9,9 @@ public class WallDetect : MonoBehaviour
     public void FindSelected()
     {
    
-        for (int i = 0; i < gameObject.GetComponent<Grid>().width; i++ )
+        for (int i = 0; i < gameObject.GetComponent<GridManager>().width; i++ )
         {
-            for (int j = 0; j < this.gameObject.GetComponent<Grid>().height; j++)
+            for (int j = 0; j < this.gameObject.GetComponent<GridManager>().height; j++)
             {
                 //GameObject curr = GameObject.Find(i + " " + j);
                 //print(curr.ToString()); 

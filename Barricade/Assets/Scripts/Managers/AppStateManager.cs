@@ -18,7 +18,7 @@ public class AppStateManager : Singleton<AppStateManager>
     //Manages the entire stete of the application
     //General Flow - Connect - > Scan - > Start Game
 
-    //public TextToSpeechManager textToSpeechManager;
+    public TextToSpeech textToSpeechManager;
 
     private void Start()
     {
@@ -26,12 +26,7 @@ public class AppStateManager : Singleton<AppStateManager>
     }
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.G)){
-            Rescan();
-        }
-        if (Input.GetKeyDown(KeyCode.H)){
-            StartGame();
-        }
+
     }
 
     /// <summary>
@@ -48,6 +43,7 @@ public class AppStateManager : Singleton<AppStateManager>
     public void Rescan()
     {
         Debug.Log("Rescan called");
+        CompVoiceSpeak("Please scan your playspace");
         SpatialUnderstanding.Instance.scanState = SpatialUnderstanding.ScanStates.None;
         SpatialUnderstanding.Instance.RequestBeginScanning();
         ScanManager.Instance.ActivateText();
@@ -58,6 +54,7 @@ public class AppStateManager : Singleton<AppStateManager>
     /// </summary>
     public void ScanningDone()
     {
+        CompVoiceSpeak("Scanning Done");
         ScanManager.Instance.DeactivateText();
         SpatialLocationFinderManager.Instance.ProcessScanToLocations();
     }
@@ -68,6 +65,7 @@ public class AppStateManager : Singleton<AppStateManager>
     public void StartGame()
     {
         Debug.Log("StartedGame");
+        CompVoiceSpeak("Starting the game.");
         //later feed in 2 variables (bool connected and int for num of players)
         GameManager.Instance.Launch(false, 3);
 
@@ -79,7 +77,7 @@ public class AppStateManager : Singleton<AppStateManager>
     /// <param name="text"></param>
     public void CompVoiceSpeak(string text)
     {
-        //textToSpeechManager.SpeakText(text);
+        textToSpeechManager.StartSpeaking(text);
     }
 }
 
