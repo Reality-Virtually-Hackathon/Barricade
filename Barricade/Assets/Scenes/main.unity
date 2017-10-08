@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.37311947, g: 0.38074005, b: 0.35872722, a: 1}
+  m_IndirectSpecularColor: {r: 0.37311992, g: 0.38074034, b: 0.35872713, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -615,7 +615,7 @@ Prefab:
     - target: {fileID: 114000012667812730, guid: 8aaf37823b26ee449bb3b3d7775965c3,
         type: 2}
       propertyPath: ServerAddress
-      value: 18.189.18.181
+      value: 192.168.1.72
       objectReference: {fileID: 0}
     - target: {fileID: 114000012667812730, guid: 8aaf37823b26ee449bb3b3d7775965c3,
         type: 2}
@@ -1814,6 +1814,103 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 727968961}
   m_Script: {fileID: 11500000, guid: b2a98b181acba5549af3d852c7664623, type: 3}
+--- !u!1 &1137772677
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1137772683}
+  - component: {fileID: 1137772682}
+  - component: {fileID: 1137772681}
+  - component: {fileID: 1137772680}
+  - component: {fileID: 1137772679}
+  - component: {fileID: 1137772678}
+  m_Layer: 0
+  m_Name: Tiles
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1137772678
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469609e4faf992748a1c9856b764a35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1137772679
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3879ba1d4c02f3499e18362a6ea5691, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1137772680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 56a9fd60f148ed744ac1469bccafba71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  myNeighbors: {fileID: 1137772678}
+  myWallDetect: {fileID: 1137772679}
+  tower: {fileID: 1431588138645860, guid: d59f03b01cb7cf24e844f3750de2d31a, type: 2}
+  isClickedPositions: []
+--- !u!114 &1137772681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 469609e4faf992748a1c9856b764a35a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1137772682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4205458c25e11344e9dd0220b7bb15cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tile: {fileID: 1412887992148788, guid: ca89d7de8975b9a46b245ca6e523e812, type: 2}
+  height: 10
+  width: 10
+  allTiles: 
+  myTileManager: {fileID: 1137772680}
+--- !u!4 &1137772683
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1137772677}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 3.02}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1351735921
 Prefab:
   m_ObjectHideFlags: 0
@@ -1987,7 +2084,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9950acdf74ec8346a2c798383a33e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  finalSurfaceTexture: {fileID: 0}
+  finalSurfaceTexture: {fileID: 2100000, guid: 17febec38ed4ee948bd1b1712bc7e220, type: 2}
 --- !u!1 &1638363833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2050,6 +2147,8 @@ MonoBehaviour:
     KeyCode: 107
   - Keyword: game
     KeyCode: 104
+  - Keyword: texture room
+    KeyCode: 116
   recognitionConfidenceLevel: 1
 --- !u!114 &1638363837
 MonoBehaviour:
