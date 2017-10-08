@@ -301,6 +301,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isClicked: 0
+  hasEnclosedNeighbor: 0
 --- !u!1 &1049392535
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,6 +346,7 @@ MonoBehaviour:
   myNeighbors: {fileID: 1049392539}
   myWallDetect: {fileID: 1049392536}
   tower: {fileID: 1431588138645860, guid: d59f03b01cb7cf24e844f3750de2d31a, type: 2}
+  isClickedPositions: []
 --- !u!114 &1049392539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -364,12 +366,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1049392535}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8ce751db111aa43bf4619883183b9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 4205458c25e11344e9dd0220b7bb15cb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tile: {fileID: 827169003}
-  height: 30
-  width: 30
+  tile: {fileID: 1412887992148788, guid: ca89d7de8975b9a46b245ca6e523e812, type: 2}
+  height: 10
+  width: 10
   allTiles: 
 --- !u!4 &1049392541
 Transform:
