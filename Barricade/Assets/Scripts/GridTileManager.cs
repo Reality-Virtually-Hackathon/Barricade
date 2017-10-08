@@ -32,7 +32,7 @@ public class GridTileManager : MonoBehaviour {
     public void SelectTile(string name, Vector3 position)
     {
         print("hi");
-        Instantiate(tower, position, new Quaternion(0, 0, 0, 0));
+        myWallDetect.FindSelected(position.x, position.z);
         /*
               //print(hit.transform.name);
               GameObject currSelected = GameObject.Find(hit.transform.name);
@@ -51,36 +51,38 @@ public class GridTileManager : MonoBehaviour {
 
     }
 
-    public void DeleteTile(string name)
+    public void DeleteTile(string name, Vector3 position)
     {
-            /*
-            print("hello");
-           // GameObject currSelected = hit.transform.gameObject;
-            print(currSelected.name);
+        myWallDetect.FindSelected(position.x, position.z);
 
-            //print(hit.transform.name);
-            //GameObject currSelected = GameObject.Find(hit.transform.name);
-            //print(hit.transform.name.ToString()); 
-            currSelected.GetComponent<Tile>().isClicked = true;
-            //print(hit.transform.position);
-            
-            if (hit.transform.gameObject.tag == "Piece")
-            {
-                GameObject.Destroy(currSelected);
-            }
-            
-            //Instantiate(tower, new Vector3((float)hit.transform.position.x, (float)hit.transform.position.y, (float)hit.transform.position.z), new Quaternion(0, 0, 0, 0));
-            currSelected.GetComponent<Renderer>().material.color = Color.blue;
+        /*
+        print("hello");
+       // GameObject currSelected = hit.transform.gameObject;
+        print(currSelected.name);
 
-            isClickedPositions.Add(new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z));
-            myNeighbors.calculateNeighbors(hit.transform.name);
-            //print (hit.transform.position.x + " a" +  hit.transform.position.y);
-            //print(currSelected.transform.position + "yo"); 
-            myWallDetect.FindSelected(currSelected.transform.localPosition.x, currSelected.transform.localPosition.y);
-            */
-        
-        
-        
+        //print(hit.transform.name);
+        //GameObject currSelected = GameObject.Find(hit.transform.name);
+        //print(hit.transform.name.ToString()); 
+        currSelected.GetComponent<Tile>().isClicked = true;
+        //print(hit.transform.position);
+
+        if (hit.transform.gameObject.tag == "Piece")
+        {
+            GameObject.Destroy(currSelected);
+        }
+
+        //Instantiate(tower, new Vector3((float)hit.transform.position.x, (float)hit.transform.position.y, (float)hit.transform.position.z), new Quaternion(0, 0, 0, 0));
+        currSelected.GetComponent<Renderer>().material.color = Color.blue;
+
+        isClickedPositions.Add(new Vector3(hit.transform.position.x, hit.transform.position.y, hit.transform.position.z));
+        myNeighbors.calculateNeighbors(hit.transform.name);
+        //print (hit.transform.position.x + " a" +  hit.transform.position.y);
+        //print(currSelected.transform.position + "yo"); 
+        myWallDetect.FindSelected(currSelected.transform.localPosition.x, currSelected.transform.localPosition.y);
+        */
+
+
+
     }
 
 

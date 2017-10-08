@@ -24,7 +24,7 @@ public class Grid : MonoBehaviour {
             {
                 GameObject currTile = Instantiate(tile);
                 currTile.GetComponent<Tile>().Initialize(myTileManager); 
-                currTile.transform.position = CalculatePosition(x, y);
+                currTile.transform.localPosition = CalculatePosition(x, y);
                 currTile.gameObject.transform.SetParent(this.gameObject.transform, false); 
                 currTile.gameObject.name = x.ToString() + " " + y.ToString();
              
@@ -37,7 +37,7 @@ public class Grid : MonoBehaviour {
         float xPos = startPosition.x + x + offset;
         float yPos = startPosition.y + y; 
 
-        return new Vector3(xPos, yPos, z);
+        return new Vector3(xPos, 0, yPos);
     }
 
 }
