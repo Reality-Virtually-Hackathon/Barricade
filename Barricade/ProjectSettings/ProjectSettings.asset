@@ -10,7 +10,7 @@ PlayerSettings:
   targetDevice: 2
   useOnDemandResources: 0
   accelerometerFrequency: 60
-  companyName: Barricader
+  companyName: DefaultCompany
   productName: Barricade
   defaultCursor: {fileID: 0}
   cursorHotspot: {x: 0, y: 0}
@@ -232,13 +232,9 @@ PlayerSettings:
   m_BuildTargetGraphicsAPIs: []
   m_BuildTargetVRSettings:
   - m_BuildTarget: Metro
-    m_Enabled: 0
-    m_Devices:
-    - HoloLens
-  - m_BuildTarget: Standalone
     m_Enabled: 1
     m_Devices:
-    - OpenVR
+    - HoloLens
   openGLRequireES31: 0
   openGLRequireES31AEP: 0
   webPlayerTemplate: APPLICATION:Default
@@ -519,12 +515,12 @@ PlayerSettings:
   m_MobileRenderingPath: 1
   metroPackageName: Barricade
   metroPackageVersion: 1.0.0.0
-  metroCertificatePath: Assets/WSATestCertificate.pfx
+  metroCertificatePath: Assets\WSATestCertificate.pfx
   metroCertificatePassword: 
-  metroCertificateSubject: Barricader
-  metroCertificateIssuer: Barricader
-  metroCertificateNotAfter: 80034372ab5ed401
-  metroApplicationDescription: AR Defense
+  metroCertificateSubject: DefaultCompany
+  metroCertificateIssuer: DefaultCompany
+  metroCertificateNotAfter: 802f336c775ed401
+  metroApplicationDescription: Barricade
   wsaImages: {}
   metroTileShortName: 
   metroCommandLineArgsFile: 
@@ -548,15 +544,15 @@ PlayerSettings:
       EnterpriseAuthentication: False
       HumanInterfaceDevice: False
       InputInjectionBrokered: False
-      InternetClient: True
-      InternetClientServer: False
+      InternetClient: False
+      InternetClientServer: True
       Location: False
       Microphone: True
       MusicLibrary: False
       Objects3D: False
       PhoneCall: False
       PicturesLibrary: False
-      PrivateNetworkClientServer: False
+      PrivateNetworkClientServer: True
       Proximity: False
       RemovableStorage: False
       SharedUserCertificates: False

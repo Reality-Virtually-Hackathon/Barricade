@@ -18,7 +18,7 @@ namespace HoloToolkit.Unity.InputModule.Tests
                 case "connect":
                     AppStateManager.Instance.Connection();
                     break;
-                case "start":
+                case "game":
                     AppStateManager.Instance.StartGame();
                     break;
             }

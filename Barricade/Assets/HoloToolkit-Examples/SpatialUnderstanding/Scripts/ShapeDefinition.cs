@@ -60,7 +60,7 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
             }
         }
 
-        private bool AddShape(
+        public  bool AddShape(
             string shapeName,
             List<SpatialUnderstandingDllShapes.ShapeComponent> shapeComponents)
         {
@@ -94,6 +94,7 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
 
         private void CreateCustomShapeDefinitions()
         {
+            Debug.Log("Creating custom shapes");
             if (!SpatialUnderstanding.Instance.AllowSpatialUnderstanding)
             {
                 return;
@@ -211,6 +212,20 @@ namespace HoloToolkit.Examples.SpatialUnderstandingFeatureOverview
         };
             AddShape("Couch", shapeComponents, shapeConstraints);
 
+            //Possible Grid play areas. 
+            shapeComponents = new List<SpatialUnderstandingDllShapes.ShapeComponent>()
+        {
+            new SpatialUnderstandingDllShapes.ShapeComponent(
+                new List<SpatialUnderstandingDllShapes.ShapeComponentConstraint>()
+                {
+                    SpatialUnderstandingDllShapes.ShapeComponentConstraint.Create_SurfaceHeight_Between(0.1f, 0.6f),
+                    SpatialUnderstandingDllShapes.ShapeComponentConstraint.Create_SurfaceCount_Min(1),
+                    SpatialUnderstandingDllShapes.ShapeComponentConstraint.Create_SurfaceArea_Min(0.35f),
+                    SpatialUnderstandingDllShapes.ShapeComponentConstraint.Create_RectangleLength_Min(0.3f),
+                    SpatialUnderstandingDllShapes.ShapeComponentConstraint.Create_RectangleWidth_Min(0.3f),
+                }),
+        };
+            AddShape("Grid", shapeComponents);
             // Mark it
             HasCreatedShapes = true;
         }

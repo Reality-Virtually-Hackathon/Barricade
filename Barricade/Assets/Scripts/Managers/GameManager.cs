@@ -15,12 +15,15 @@ using HoloToolkit.Sharing;
 public class GameManager : Singleton<GameManager>
 {
     public BuildingBlocksManager buildingBlockManager;
+    public GridManager gridManager;
     public ShipManager shipManager;
     public GameObject gameStage; // this will be the sharing stage that has world anchor on it. 
     int numOfPlayers;
     public List<Player> currentPlayers;
     public Player localPlayer;
 
+    public int phaseDuration;
+    public bool buildPhaseActive; // if false we are in attack phase. 
 
     /// Launches the networked game with X players, if not connected, it is a bot game with X-1 AI.
     public void Launch(bool networked, int numofPlayers)
@@ -47,14 +50,56 @@ public class GameManager : Singleton<GameManager>
         
         GlobalPlayerController.Instance.Activate();
         //Start spawning ships
+        gridManager.CreateGrid();
         shipManager.StartSpawningShips();
+        StartCoroutine(PhaseCounter());
+
+    }
+
+    IEnumerator PhaseCounter()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(phaseDuration);
+            SwitchPhase();
+        }
+    }
+
+    public void SwitchPhase()
+    {
+        Debug.Log("Called Switch Phase");
+        if (buildPhaseActive)
+        {
+            StartAttackPhase();
+            buildPhaseActive = false;
+            return;
+        }
+        else
+        {
+            StartBuildPhase();
+            buildPhaseActive = true;
+            return;
+        }
+    }
+
+
+   public void StartBuildPhase()
+    {
+        shipManager.spawnShipsChecker= false;
+    }
+
+    public void StartAttackPhase()
+    {
+        shipManager.spawnShipsChecker = true;
     }
 
     //Wipes all game info and returns to menu. 
-    public void ClearGame()
+    public void ResetGame()
     {
         localPlayer = null;
         currentPlayers.Clear();
         GlobalPlayerController.Instance.DeActivate();
+        StopCoroutine("PhaseCounter"); // Stop the phase counter.
+        shipManager.spawnShipsChecker = false; // reset ship spawn checker for next game. 
     }
 }
