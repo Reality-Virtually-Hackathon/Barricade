@@ -19,6 +19,9 @@ public class GlobalPlayerController : Singleton<GlobalPlayerController> , IInput
     public bool isActive;
 
     private GameObject currentBlock;
+    [SerializeField]
+    private GameObject cursor;
+    private List<MeshFilter> roomMeshFilters;
     public void Start()
     {
         isActive = false;
@@ -28,6 +31,8 @@ public class GlobalPlayerController : Singleton<GlobalPlayerController> , IInput
         isActive = true;
         InputManager.Instance.ClearFallbackInputStack();
         InputManager.Instance.PushFallbackInputHandler(gameObject);
+        roomMeshFilters = SpatialUnderstanding.Instance.UnderstandingCustomMesh.GetMeshFilters() as List<MeshFilter>;
+
     }
 
     public void DeActivate()
@@ -43,7 +48,7 @@ public class GlobalPlayerController : Singleton<GlobalPlayerController> , IInput
         currentBlock = Instantiate(GameManager.Instance.buildingBlockManager.testBuildingBlock, null);
         currentBlock.transform.parent = GameManager.Instance.gameStage.transform;
 
-        currentBlock.transform.position = (Camera.main.transform.position + Camera.main.transform.forward * 1.5f);
+        //currentBlock.transform.position = (cursor.transform.position);// + Camera.main.transform.forward * 1.5f);
         currentBlock.GetComponent<BlockDragger>().HostTransform = GameManager.Instance.gameStage.transform;
         currentBlock.GetComponent<BlockDragger>().OnInputDown(eventData);
         

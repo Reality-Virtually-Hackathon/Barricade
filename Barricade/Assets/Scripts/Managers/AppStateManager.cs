@@ -22,6 +22,8 @@ public class AppStateManager : Singleton<AppStateManager>
     public TextToSpeech textToSpeechManager;
     //public GameObject manualIPEnter;
     public PrefabSpawnManager spawnManager;
+    public GameObject cursor;
+    public GameObject tiles;
 
     private void Start()
     {
@@ -76,6 +78,11 @@ public class AppStateManager : Singleton<AppStateManager>
         //later feed in 2 variables (bool connected and int for num of players)
         GameManager.Instance.Launch(false, 3);
 
+    }
+
+    public void PlaceGrid()
+    {
+        tiles.transform.position = cursor.transform.position;
     }
 
     /// <summary>
