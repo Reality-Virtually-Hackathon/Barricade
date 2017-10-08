@@ -30,7 +30,7 @@ public class ShipController : MonoBehaviour {
         cnnBall.transform.SetParent(GameManager.Instance.gameStage.transform);
         //sets the cnnBall position to edge of turret
         cnnBall.transform.localPosition = canonBallSpawnPoint.transform.position;
-        cnnBall.GetComponent<Rigidbody>().velocity = BallisticVel(GetRandomTarget(), 30);
+        cnnBall.GetComponent<Rigidbody>().velocity = BallisticVel(GetRandomTarget(), Random.Range(30, 60));
         //Instantiate a canon ball at the edge of the turret
         //Add a force velocity to the canon ball. 
         canonTurret.SetActive(false);

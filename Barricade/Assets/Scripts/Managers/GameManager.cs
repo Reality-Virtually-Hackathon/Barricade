@@ -87,10 +87,12 @@ public class GameManager : Singleton<GameManager>
     {
         shipManager.spawnShipsChecker= false;
         shipManager.DestoryAllActiveShips();
+        AppStateManager.Instance.CompVoiceSpeak("Build phase started");
     }
 
     public void StartAttackPhase()
     {
+        AppStateManager.Instance.CompVoiceSpeak("Attack phase started");
         shipManager.spawnShipsChecker = true;
     }
 

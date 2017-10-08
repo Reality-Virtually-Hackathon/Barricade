@@ -130,12 +130,12 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
     {
         shipFloorLocationList = new List<SpatialLocation>();
 
-        //Added for quick testing
-        spatialLocationList = new List<SpatialLocation>();
-        if (spatialLocationList.Count ==0)
-        {
-            return new Vector3(1,-1 ,1); // quick testing. 
-        }
+        ////Added for quick testing
+        //spatialLocationList = new List<SpatialLocation>();
+        //if (spatialLocationList.Count ==0)
+        //{
+        //    return new Vector3(1,-1 ,1); // quick testing. 
+        //}
         
         foreach (SpatialLocation curLocation in spatialLocationList)
         {
