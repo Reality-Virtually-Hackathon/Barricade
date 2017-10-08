@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -119,35 +119,52 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.38
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 14.13
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -11.97
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalRotation.x
-      value: 0
+      value: 0.43238345
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.03451529
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: 0.017027356
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.9008681
       objectReference: {fileID: 0}
     - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
       propertyPath: m_RootOrder
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 20000013304850028, guid: d379ed0a5618c9f479f58bd83a2d0ad3,
+        type: 2}
+      propertyPath: field of view
+      value: 57.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 51.066
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 7.03
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000010560871102, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 5.5270004
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d379ed0a5618c9f479f58bd83a2d0ad3, type: 2}
@@ -169,7 +186,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4749828848435566, guid: d59f03b01cb7cf24e844f3750de2d31a, type: 2}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -2.26
       objectReference: {fileID: 0}
     - target: {fileID: 4749828848435566, guid: d59f03b01cb7cf24e844f3750de2d31a, type: 2}
       propertyPath: m_LocalRotation.x
@@ -293,6 +310,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isClicked: 0
+  hasEnclosedNeighbor: 0
 --- !u!1 &1049392535
 GameObject:
   m_ObjectHideFlags: 0
@@ -337,6 +355,7 @@ MonoBehaviour:
   myNeighbors: {fileID: 1049392539}
   myWallDetect: {fileID: 1049392536}
   tower: {fileID: 1431588138645860, guid: d59f03b01cb7cf24e844f3750de2d31a, type: 2}
+  isClickedPositions: []
 --- !u!114 &1049392539
 MonoBehaviour:
   m_ObjectHideFlags: 0
