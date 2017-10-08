@@ -431,7 +431,7 @@ MonoBehaviour:
   gridManager: {fileID: 407794799}
   shipManager: {fileID: 407794798}
   gameStage: {fileID: 933881151}
-  phaseDuration: 10
+  phaseDuration: 15
   buildPhaseActive: 1
 --- !u!114 &407794798
 MonoBehaviour:
@@ -445,6 +445,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shipPrefab: {fileID: 1987155239536614, guid: a9e339548b1b75248af231eb885ffca3, type: 2}
+  canonBallPrefab: {fileID: 1280055469006582, guid: c7f40dc9f694e3d4abd9fe5e10713701,
+    type: 2}
   shipMinHeight: 0.1
   shipMaxHeight: 0.1
   shipSpawnnterval: 0.8
@@ -457,7 +459,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 407794794}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1a8ce751db111aa43bf4619883183b9b, type: 3}
+  m_Script: {fileID: 11500000, guid: 7617620903a21dd4ca397a5cd39adc07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   tile: {fileID: 1412887992148788, guid: ca89d7de8975b9a46b245ca6e523e812, type: 2}

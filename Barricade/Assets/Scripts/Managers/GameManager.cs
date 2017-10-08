@@ -86,6 +86,7 @@ public class GameManager : Singleton<GameManager>
    public void StartBuildPhase()
     {
         shipManager.spawnShipsChecker= false;
+        shipManager.DestoryAllActiveShips();
     }
 
     public void StartAttackPhase()

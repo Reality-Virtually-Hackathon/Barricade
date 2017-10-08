@@ -109,13 +109,16 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
     public Vector3 GetGridSpawnLocation()
     {
         Vector3 spwnLoc = Vector3.zero;
-        foreach (SpatialLocation curLocation in spatialLocationList)
+        if (spatialLocationList != null)
         {
-            if (curLocation.name == "gridSittingLoc") // unnecessary loopingl.. yesh cmon man. 
+            foreach (SpatialLocation curLocation in spatialLocationList)
             {
-                spwnLoc = curLocation.position;
-               
-                break;
+                if (curLocation.name == "gridSittingLoc") // unnecessary loopingl.. yesh cmon man. 
+                {
+                    spwnLoc = curLocation.position;
+
+                    break;
+                }
             }
         }
         Debug.Log(spwnLoc);
@@ -127,6 +130,13 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
     {
         shipFloorLocationList = new List<SpatialLocation>();
 
+        //Added for quick testing
+        spatialLocationList = new List<SpatialLocation>();
+        if (spatialLocationList.Count ==0)
+        {
+            return new Vector3(1,-1 ,1); // quick testing. 
+        }
+        
         foreach (SpatialLocation curLocation in spatialLocationList)
         {
             if (curLocation.name == "shipFloor")
