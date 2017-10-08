@@ -247,7 +247,7 @@
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Unity\DefaultSyncModelAccessor.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Unity\ISyncModelAccessor.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Unity\TransformSynchronizer.cs" />
-    <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\AutoJoinSession.cs" />
+    <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\AutoJoinSessionAndRoom.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\ConsoleLogWriter.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\DirectPairing.cs" />
     <Compile Include="Assets\HoloToolkit\Sharing\Scripts\Utilities\ManualIpConfiguration.cs" />
