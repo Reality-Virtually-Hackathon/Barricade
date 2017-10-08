@@ -11,6 +11,7 @@ using System;
 using HoloToolkit.Examples.SpatialUnderstandingFeatureOverview;
 using HoloToolkit.Sharing.Tests;
 using HoloToolkit.Sharing;
+using HoloToolkit.Sharing.Spawning;
 
 public class AppStateManager : Singleton<AppStateManager>
 {
@@ -20,6 +21,7 @@ public class AppStateManager : Singleton<AppStateManager>
 
     public TextToSpeech textToSpeechManager;
     //public GameObject manualIPEnter;
+    public PrefabSpawnManager spawnManager;
 
     private void Start()
     {

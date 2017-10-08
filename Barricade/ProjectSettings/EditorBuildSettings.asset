@@ -11,6 +11,6 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/meshIdentification.unity
     guid: 352c2a0ec7a652146b610ceb1ce9bf08
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/roomScanShader.unity
     guid: 4b2b80b61c0880245ba9afcff4d14532

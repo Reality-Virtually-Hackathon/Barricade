@@ -1,6 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using HoloToolkit.Unity;
+using UnityEngine.SceneManagement;
+using HoloToolkit.Unity.InputModule;
+using HoloToolkit.Unity.SpatialMapping;
+using System.Collections.ObjectModel;
+using UnityEngine.VR.WSA;
+using System;
+using HoloToolkit.Examples.SpatialUnderstandingFeatureOverview;
+using HoloToolkit.Sharing.Tests;
+using HoloToolkit.Sharing;
+using HoloToolkit.Sharing.Spawning;
 
 public class ShipManager: MonoBehaviour {
 
@@ -38,12 +49,27 @@ public class ShipManager: MonoBehaviour {
         {
             return; // do not spawn ships. 
         }
+        //Local ship.
         Debug.Log("Called spawnship");
         Vector3 spawnLocation = SpatialLocationFinderManager.Instance.GetRandomShipSpawnLocation();
-        GameObject curShip = Instantiate(shipPrefab, null);
-        curShip.transform.SetParent(GameManager.Instance.gameStage.transform);
-        curShip.transform.position = spawnLocation;
-        listOfSpawnedShips.Add(curShip);
+        //SINGLE PLAYER SPAWNINING. 
+        //GameObject curShip = Instantiate(shipPrefab, null);
+        //curShip.transform.SetParent(GameManager.Instance.gameStage.transform);
+        //curShip.transform.position = spawnLocation;
+
+        //listOfSpawnedShips.Add(curShip);
+
+
+        //Netwoked Spawn
+
+        AppStateManager.Instance.spawnManager.Spawn(
+  new SyncShip(),
+  spawnLocation,
+  Quaternion.identity,
+  GameManager.Instance.gameStage,
+  "My Obj",
+  false);
+
 
     }
 
