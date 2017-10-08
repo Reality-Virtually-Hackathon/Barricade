@@ -19,10 +19,12 @@ public class AppStateManager : Singleton<AppStateManager>
     //General Flow - Connect - > Scan - > Start Game
 
     public TextToSpeech textToSpeechManager;
+    //public GameObject manualIPEnter;
 
     private void Start()
     {
         ScanManager.Instance.DeactivateText();
+       // manualIPEnter.SetActive(false);
     }
     private void Update()
     {
@@ -34,6 +36,8 @@ public class AppStateManager : Singleton<AppStateManager>
     /// </summary>
     public void Connection()
     {
+        UIMenuManager.Instance.DeactivateAppControlMenu();
+        //manualIPEnter.SetActive(true);
         Debug.Log("ConnectionCalled");
     }
 
@@ -69,6 +73,20 @@ public class AppStateManager : Singleton<AppStateManager>
         CompVoiceSpeak("Starting the game.");
         //later feed in 2 variables (bool connected and int for num of players)
         GameManager.Instance.Launch(false, 3);
+
+    }
+
+    /// <summary>
+    /// Starts a fresh instance of the game. 
+    /// </summary>
+    public void TextureRoom()
+    {
+        Debug.Log("Texturing Room");
+
+       CompVoiceSpeak("Texturing the room.");
+        //later feed in 2 variables (bool connected and int for num of players)
+        //GameManager.Instance.Launch(false, 3);
+        SpatialLocationFinderManager.Instance.TextureRoom();
 
     }
 

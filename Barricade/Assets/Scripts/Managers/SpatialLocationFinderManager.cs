@@ -23,6 +23,8 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
     private SpatialUnderstandingDllShapes.ShapeResult[] resultsShape = new SpatialUnderstandingDllShapes.ShapeResult[512];
     public List<SpatialLocation> spatialLocationList;
 
+    public Material finalSurfaceTexture;
+
     public void ProcessScanToLocations()
     {
         spatialLocationList = new List<SpatialLocation>();
@@ -106,6 +108,24 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
 
     }
 
+
+    public void TextureRoom()
+    {
+        Debug.Log("SpatialLocation: Texturing room");
+        List<MeshFilter> roomMeshFilters;
+        // get all mesh filters used for spatial mapping meshes
+        roomMeshFilters = SpatialUnderstanding.Instance.UnderstandingCustomMesh.GetMeshFilters() as List<MeshFilter>;
+        int i;
+        int limit = roomMeshFilters.Count;
+        Debug.Log(limit);
+        for (i=0;i<limit;++i)
+        {
+            roomMeshFilters[i].GetComponent<Renderer>().material = finalSurfaceTexture;
+        }
+
+    }
+
+
     public Vector3 GetGridSpawnLocation()
     {
         Vector3 spwnLoc = Vector3.zero;
@@ -124,6 +144,12 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
         Debug.Log(spwnLoc);
         return spwnLoc;
     }
+
+
+
+
+
+
     private List<SpatialLocation> shipFloorLocationList;
     //returns a ranom ship spawn location
     public Vector3 GetRandomShipSpawnLocation()
@@ -153,4 +179,6 @@ public class SpatialLocationFinderManager : Singleton<SpatialLocationFinderManag
 
         return rndPositon;
     }
+
+
 }

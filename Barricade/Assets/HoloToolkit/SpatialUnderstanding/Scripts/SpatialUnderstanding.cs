@@ -252,6 +252,7 @@ namespace HoloToolkit.Unity
                         Debug.LogWarningFormat("SpatialUnderstandingDll.Imports.GeneratePlayspace_UpdateScan took {0,9:N2} ms", stopWatch.Elapsed.TotalMilliseconds);
                     }
                 }
+                
             }
 
             // If it's done, finish up

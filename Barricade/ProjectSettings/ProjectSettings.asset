@@ -548,7 +548,7 @@ PlayerSettings:
       EnterpriseAuthentication: False
       HumanInterfaceDevice: False
       InputInjectionBrokered: False
-      InternetClient: False
+      InternetClient: True
       InternetClientServer: True
       Location: False
       Microphone: True
@@ -561,7 +561,7 @@ PlayerSettings:
       RemovableStorage: False
       SharedUserCertificates: False
       SpatialPerception: True
-      UserAccountInformation: False
+      UserAccountInformation: True
       VideosLibrary: False
       VoipCall: False
       WebCam: True

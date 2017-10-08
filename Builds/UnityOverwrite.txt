@@ -5,11 +5,11 @@
 # Write a line equal to 'overwrite-all' (without quotes) to overwrite everything (preserved accross builds)
 # Write a line equal to 'keep-all' (without quotes) to keep files regardless their modification (preserved accross builds)
 # Default behavior is to never overwrite files
-Barricade.sln: 6C1678851590C1F788BC362DBE95FDA5
+Barricade.sln: B59CAE7300A0E00FA078087CAA8ECF95
 Barricade\App.cs: A7E3D7D5FE63C78FB9884ED8963DBA77
-Barricade\Barricade.csproj: 120AFD6B8C697F3BD285C04DD17BBDD0
+Barricade\Barricade.csproj: CC082558CB7897001515609B6EF8062F
 Barricade\Barricade.csproj.user: BEFB8AC4886C4CFDD3C68445D6F19B04
-Barricade\Package.appxmanifest: 6F30DE47DB9AE5566FA168FD295C8CE7
+Barricade\Package.appxmanifest: AACDA28359903266A604EF30884BAF79
 Barricade\project.json: 1D02BC64BAC0D041019673A1C4C51737
 Barricade\Assets\SplashScreen.scale-200.png: 60618416282ED104FD1473935716045D
 Barricade\Assets\Square150x150Logo.scale-200.png: E02834B4A5DFB97FF8E212C1CACBB084
