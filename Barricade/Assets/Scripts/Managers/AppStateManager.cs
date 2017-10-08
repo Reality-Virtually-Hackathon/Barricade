@@ -57,6 +57,7 @@ public class AppStateManager : Singleton<AppStateManager>
         CompVoiceSpeak("Scanning Done");
         ScanManager.Instance.DeactivateText();
         SpatialLocationFinderManager.Instance.ProcessScanToLocations();
+        UIMenuManager.Instance.ActivateAppControlMenu();
     }
 
     /// <summary>
