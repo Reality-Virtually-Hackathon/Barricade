@@ -7,6 +7,7 @@ public class ShipManager: MonoBehaviour {
     //Storing the ship prefab and other stuff later
 
     public GameObject shipPrefab;
+    public GameObject canonBallPrefab;
 
     public float shipMinHeight=0; // Dimension of a ship. used when finding spawnable locations. 
     public float shipMaxHeight=0.125f;
@@ -44,6 +45,16 @@ public class ShipManager: MonoBehaviour {
         curShip.transform.position = spawnLocation;
         listOfSpawnedShips.Add(curShip);
 
+    }
+
+    public void DestoryAllActiveShips()
+    {
+
+        foreach(GameObject shipToDestroy in listOfSpawnedShips)
+        {
+            Destroy(shipToDestroy);
+        }
+        listOfSpawnedShips.Clear();
     }
 
     
