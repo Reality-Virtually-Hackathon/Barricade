@@ -3,5 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Tile : MonoBehaviour{
-    public bool isClicked; 
+    public bool isClicked;
+    public bool hasEnclosedNeighbor; 
 }
