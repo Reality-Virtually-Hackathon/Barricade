@@ -650,7 +650,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ea9b56756ce4549ac9331b03af784f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnablePrefabs: []
+  spawnablePrefabs:
+  - DataModelClassName: SyncShip
+    Prefab: {fileID: 1987155239536614, guid: a9e339548b1b75248af231eb885ffca3, type: 2}
 --- !u!114 &452822694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1983,6 +1985,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e9950acdf74ec8346a2c798383a33e63, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  finalSurfaceTexture: {fileID: 0}
 --- !u!1 &1638363833
 GameObject:
   m_ObjectHideFlags: 0
@@ -2543,6 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textToSpeechManager: {fileID: 1709664545}
+  spawnManager: {fileID: 452822693}
 --- !u!1 &1990612329
 GameObject:
   m_ObjectHideFlags: 0

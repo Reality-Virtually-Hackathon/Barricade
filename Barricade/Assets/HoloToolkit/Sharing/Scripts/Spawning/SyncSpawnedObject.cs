@@ -52,4 +52,10 @@ namespace HoloToolkit.Sharing.Spawning
             ObjectPath.Value += Name.Value;
         }
     }
+    [SyncDataClass]
+    public class SyncShip : SyncSpawnedObject
+    {
+
+    }
+    //
 }
