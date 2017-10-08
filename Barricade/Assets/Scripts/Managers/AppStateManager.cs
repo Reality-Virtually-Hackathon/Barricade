@@ -19,10 +19,12 @@ public class AppStateManager : Singleton<AppStateManager>
     //General Flow - Connect - > Scan - > Start Game
 
     public TextToSpeech textToSpeechManager;
+    //public GameObject manualIPEnter;
 
     private void Start()
     {
         ScanManager.Instance.DeactivateText();
+       // manualIPEnter.SetActive(false);
     }
     private void Update()
     {
@@ -34,6 +36,8 @@ public class AppStateManager : Singleton<AppStateManager>
     /// </summary>
     public void Connection()
     {
+        UIMenuManager.Instance.DeactivateAppControlMenu();
+        //manualIPEnter.SetActive(true);
         Debug.Log("ConnectionCalled");
     }
 
