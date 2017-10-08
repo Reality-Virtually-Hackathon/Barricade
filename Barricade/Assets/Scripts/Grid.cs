@@ -9,6 +9,7 @@ public class Grid : MonoBehaviour {
     public int width;
     private Vector3 startPosition;
     public List<bool> allTiles;
+    public GridTileManager myTileManager; 
     private const float z = (float)0.2; 
 	// Use this for initialization
 	void Start () {
@@ -22,6 +23,7 @@ public class Grid : MonoBehaviour {
             for (int y = 0; y < width; y++)
             {
                 GameObject currTile = Instantiate(tile);
+                currTile.GetComponent<Tile>().Initialize(myTileManager); 
                 currTile.transform.position = CalculatePosition(x, y);
                 currTile.gameObject.transform.SetParent(this.gameObject.transform, false); 
                 currTile.gameObject.name = x.ToString() + " " + y.ToString();
