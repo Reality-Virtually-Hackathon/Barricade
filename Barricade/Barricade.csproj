@@ -355,7 +355,7 @@
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\SphereBasedTagalong.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\StabilizationPlaneModifier.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Tagalong.cs" />
-    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TextToSpeechManager.cs" />
+    <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TextToSpeech.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Timer.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\TimerScheduler.cs" />
     <Compile Include="Assets\HoloToolkit\Utilities\Scripts\Utils.cs" />
@@ -510,6 +510,7 @@
     <Compile Include="Assets\Scripts\Managers\ConnectionManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GameManager.cs" />
     <Compile Include="Assets\Scripts\Managers\GlobalSpeechManager.cs" />
+    <Compile Include="Assets\Scripts\Managers\GridManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ScanManager.cs" />
     <Compile Include="Assets\Scripts\Managers\ShipManager.cs" />
     <Compile Include="Assets\Scripts\Managers\SpatialLocationFinderManager.cs" />
@@ -518,6 +519,7 @@
     <Compile Include="Assets\Scripts\SpatialLocation.cs" />
     <Compile Include="Assets\Scripts\Tile.cs" />
     <Compile Include="Assets\Scripts\WallDetect.cs" />
+    <Compile Include="Assets\Scripts\WallDetecter.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio - Music and SFX\test.txt" />
