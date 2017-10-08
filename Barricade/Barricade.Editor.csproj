@@ -189,7 +189,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Audio - Music and SFX\test.txt" />
-    <None Include="Assets\Grass And Flowers Pack 1\Example Scene\Skyboxes\_skybox info.txt" />
     <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\PlaneCut.cginc" />
     <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderShared.cginc" />
     <None Include="Assets\HoloToolkit-Examples\Medical\Shaders\VolumeRenderSlice.shader" />
