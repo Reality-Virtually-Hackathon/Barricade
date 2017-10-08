@@ -5,6 +5,7 @@ Shader "SpatialUnderstandingTerrain"
 {
 	Properties
 	{
+		_NoiseTex("Noise texture", 2D) = "black" {}
 		_GrassTex("Grass (RGB)", 2D) = "green" {}
 		_WallTex("Wall (RGB)", 2D) = "brown" {}
 		_WaterTex("Water (RGB)", 2D) = "blue" {}
@@ -55,13 +56,13 @@ Shader "SpatialUnderstandingTerrain"
 				fixed4 col = tex2D(_GrassTex, input.worldPos);//float4(0,0,0,1);
 				float3 normal = normalize(input.normal);
 
-				if (abs(normal.y) < 0.2f )
+				if (abs(normal.y) < 0.2f)
 				{
 					col = tex2D(_WallTex, input.worldPos);
 				}
-				if (abs(normal.y) > 0.8f)
+				if (normal.y > 0.2f)
 				{
-					if (input.worldPos.y > 0.01)
+					if (input.worldPos.y > -0.5f)
 					{
 						col = tex2D(_GrassTex, input.worldPos);
 					}
@@ -69,7 +70,11 @@ Shader "SpatialUnderstandingTerrain"
 					{
 						col = tex2D(_WaterTex, input.worldPos);
 					}
-					
+
+				}
+				else
+				{
+					col = float4(0, 0, 0, 0);
 				}
 
 				return col;
