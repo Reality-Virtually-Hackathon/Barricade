@@ -502,6 +502,7 @@
     <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextMeshColorThemeWidget.cs" />
     <Compile Include="Assets\HoloToolkit-Examples\UX\Scripts\Widgets\TextureThemeWidget.cs" />
     <Compile Include="Assets\Scripts\BlockDragger.cs" />
+    <Compile Include="Assets\Scripts\CannonController.cs" />
     <Compile Include="Assets\Scripts\Controllers\GlobalPlayerController.cs" />
     <Compile Include="Assets\Scripts\FindNeighbors.cs" />
     <Compile Include="Assets\Scripts\Grid.cs" />

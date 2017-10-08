@@ -21,6 +21,9 @@ namespace HoloToolkit.Unity.InputModule.Tests
                 case "game":
                     AppStateManager.Instance.StartGame();
                     break;
+                case "texture room":
+                    AppStateManager.Instance.TextureRoom();
+                    break;
             }
         }
 

@@ -8,13 +8,19 @@ Shader "SpatialUnderstandingTerrain"
 		_NoiseTex("Noise texture", 2D) = "black" {}
 		_GrassTex("Grass (RGB)", 2D) = "green" {}
 		_WallTex("Wall (RGB)", 2D) = "brown" {}
+		_SkyTex("Sky (RGB)", 2D) = "blue" {}
 		_WaterTex("Water (RGB)", 2D) = "blue" {}
+		_Transparency("Transparency", Range(0.0,0.5)) = 0.25
+
+		_FloorHeight("Floor Height", Range(-1.5,0.5)) = -0.1
 	}
 
 		SubShader
 	{
-		Tags{ "RenderType" = "Opaque" }
-
+		Tags{ "Queue" = "Transparent" "RenderType" = "Transparent" }
+		LOD 100
+			ZWrite Off
+			Blend SrcAlpha OneMinusSrcAlpha
 		Pass
 		{
 			CGPROGRAM
@@ -27,6 +33,9 @@ Shader "SpatialUnderstandingTerrain"
 			sampler2D _GrassTex;
 			sampler2D _WallTex;
 			sampler2D _WaterTex;
+			sampler2D _SkyTex;
+
+			float _FloorHeight;
 
 			struct V2F
 			{
@@ -56,13 +65,23 @@ Shader "SpatialUnderstandingTerrain"
 				fixed4 col = tex2D(_GrassTex, input.worldPos);//float4(0,0,0,1);
 				float3 normal = normalize(input.normal);
 
-				if (abs(normal.y) < 0.2f)
+				if (abs(normal.y) < 0.5f)
 				{
+
 					col = tex2D(_WallTex, input.worldPos);
+					if (abs(normal.y) < 0.1)
+					{
+						col.a = 0.8;
+					}
+					if (abs(normal.y) < 0.05)
+					{
+						col.a = 0.5;
+					}
+					
 				}
-				if (normal.y > 0.2f)
+				if (normal.y > 0.5f)
 				{
-					if (input.worldPos.y > -0.5f)
+					if (input.worldPos.y > _FloorHeight)
 					{
 						col = tex2D(_GrassTex, input.worldPos);
 					}
@@ -72,10 +91,19 @@ Shader "SpatialUnderstandingTerrain"
 					}
 
 				}
-				else
+				if (normal.y < -0.5f)
 				{
-					col = float4(0, 0, 0, 0);
+					if (input.worldPos.y > 1.0f)
+					{
+						col = tex2D(_SkyTex, input.worldPos);
+						col.a = 0.5f;
+					}
+					else
+					{
+						col = tex2D(_WallTex, input.worldPos);
+					}
 				}
+				
 
 				return col;
 				}

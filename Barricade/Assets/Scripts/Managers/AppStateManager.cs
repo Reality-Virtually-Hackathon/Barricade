@@ -72,6 +72,20 @@ public class AppStateManager : Singleton<AppStateManager>
     }
 
     /// <summary>
+    /// Starts a fresh instance of the game. 
+    /// </summary>
+    public void TextureRoom()
+    {
+        Debug.Log("Texturing Room");
+
+       CompVoiceSpeak("Texturing the room.");
+        //later feed in 2 variables (bool connected and int for num of players)
+        //GameManager.Instance.Launch(false, 3);
+        SpatialLocationFinderManager.Instance.TextureRoom();
+
+    }
+
+    /// <summary>
     /// Reads audio in comp voice with source on camera. 
     /// </summary>
     /// <param name="text"></param>
